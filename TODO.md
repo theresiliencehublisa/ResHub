@@ -176,3 +176,7 @@ Verification: `pnpm check`, all ten tests, and `pnpm build` passed; `git diff --
 - [x] In the “Help us keep showing up” section, state “Every shirt sold through Sloane Fox helps fund the full eight-week program for two people.” exactly once; do not repeat that supporting-two-people statement.
 - [x] Add “What our designs mean:” and the following exact messages: “You been passed by the fox” — when you see someone wearing this, you know you've just crossed paths with someone who doesn't give up. Someone who keeps going no matter what. That's all it is. “Built, Not Bought” — real strength comes from showing up, doing the work, and sticking around. It's earned, not paid for. “The Power Is Within” — the strength you need is already inside you. You just have to trust it.
 - [x] End the design copy with: “We've got plenty more designs on the way, each one with its own message. Wear the one that speaks to you.” Keep the copy grouped near the Sloane Fox support wording and readable on mobile and desktop.
+
+## Vercel portrait restoration
+- [ ] On Vercel project `res-hub`, show the approved portraits for Juan Carroso, Carlos Camacho, and Doctor Carlos Robalino on their matching team cards. Use Git-tracked static public assets instead of Manus-only `/manus-storage/...` URLs so the deployed Vercel site can serve them.
+- [ ] Preserve the user's identity mapping: the bearded portrait is Carlos Camacho; the serious-looking Uruguayan man is Doctor Carlos Robalino. Do not generate or substitute portraits.

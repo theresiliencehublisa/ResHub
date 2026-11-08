@@ -468,7 +468,7 @@ export default function Home() {
             <p className="new-team-intro">The people connected with The Resilience Hub and their professional backgrounds.</p>
             <div className="new-team-grid">
               <article className="new-team-card">
-                <img className="new-team-photo" src="/manus-storage/juan_5331d612.webp" alt="Juan Carroso, Founder and Lead Contact" loading="lazy" decoding="async" />
+                <img className="new-team-photo" src="/team/juan.webp" alt="Juan Carroso, Founder and Lead Contact" loading="lazy" decoding="async" />
                 <h3>Juan Carroso</h3>
                 <p className="new-team-role">Founder and Lead Contact</p>
                 <p>
@@ -480,7 +480,7 @@ export default function Home() {
                 </p>
               </article>
               <article className="new-team-card">
-                <img className="new-team-photo" src="/manus-storage/WhatsAppImage2026-11-05at9.24.57AM_6d3da38a.jpeg" alt="Carlos Camacho, Registered Psychologist" loading="lazy" decoding="async" />
+                <img className="new-team-photo" src="/team/carlos-camacho.jpeg" alt="Carlos Camacho, Registered Psychologist" loading="lazy" decoding="async" />
                 <h3>Carlos Camacho</h3>
                 <p className="new-team-role">Registered Psychologist</p>
                 <p>
@@ -492,7 +492,7 @@ export default function Home() {
                 <p className="new-registration">AHPRA registration number: <span>PSY 0001635296</span></p>
               </article>
               <article className="new-team-card">
-                <img className="new-team-photo" src="/manus-storage/WhatsAppImage2026-11-05at9.24.58AM_d083e5b6.jpeg" alt="Doctor Carlos Robalino, General Practitioner" loading="lazy" decoding="async" />
+                <img className="new-team-photo" src="/team/dr-carlos-robalino.jpeg" alt="Doctor Carlos Robalino, General Practitioner" loading="lazy" decoding="async" />
                 <h3>Doctor Carlos Robalino</h3>
                 <p className="new-team-role">General Practitioner</p>
                 <p>

@@ -44,6 +44,10 @@ The latest request supersedes the earlier instruction to leave two spaces for fu
 
 Keep the shirt-support impact line “Every shirt sold through Sloane Fox helps fund the full eight-week program for two people.” exactly once in the support section. Under a “What our designs mean:” subheading, add these three meanings in the user's wording: “You been passed by the fox” — “when you see someone wearing this, you know you've just crossed paths with someone who doesn't give up. Someone who keeps going no matter what. That's all it is.”; “Built, Not Bought” — “real strength comes from showing up, doing the work, and sticking around. It's earned, not paid for.”; “The Power Is Within” — “the strength you need is already inside you. You just have to trust it.” End with: “We've got plenty more designs on the way, each one with its own message. Wear the one that speaks to you.” Keep it near the existing Sloane Fox paragraph in the bottom support section, styled with the established palette and responsive on mobile and desktop.
 
+## Vercel portrait-restoration implementation note
+
+The verified deployment is Vercel project `res-hub`, connected to `theresiliencehublisa/ResHub`. The repository-root Vite build uses the root `src/` and copies root `public/` to `dist/public`; team photos must therefore be checked-in files under root `public/` and referenced through root-relative public URLs, not the Manus-only `/manus-storage/...` routes. Reuse the original user-approved portraits and preserve the mapping: Juan Carroso, bearded Carlos Camacho, and the serious-looking Uruguayan man Doctor Carlos Robalino. Keep this fix on a preview branch and show the user the change list and preview before anything is merged or published to production.
+
 
 ## Standing user corrections for future AI-generated prompts
 
