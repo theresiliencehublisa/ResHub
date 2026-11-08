@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
+import { existsSync } from "node:fs";
 
 const homeSource = readFileSync(
   resolve(import.meta.dirname, "../client/src/pages/Home.tsx"),
@@ -16,6 +17,10 @@ const siteMetadataSource = readFileSync(
 );
 const headSource = readFileSync(
   resolve(import.meta.dirname, "../client/src/components/Head.tsx"),
+  "utf8",
+);
+const vercelHomeSource = readFileSync(
+  resolve(import.meta.dirname, "../src/pages/Home.tsx"),
   "utf8",
 );
 
@@ -34,6 +39,34 @@ describe("Resilience Hub homepage links", () => {
       "faq",
     ]) {
       expect(homeSource).toContain(`id=\"${id}\"`);
+    }
+  });
+
+  it("serves the three Vercel team portraits from matching static assets", () => {
+    const teamSection = vercelHomeSource.split('<section id="team"')[1]?.split("</section>")[0] ?? "";
+    const portraits = [
+      {
+        src: "/team/juan.webp",
+        alt: "Juan Carroso, Founder and Lead Contact",
+        file: "juan.webp",
+      },
+      {
+        src: "/team/carlos-camacho.jpeg",
+        alt: "Carlos Camacho, Registered Psychologist",
+        file: "carlos-camacho.jpeg",
+      },
+      {
+        src: "/team/dr-carlos-robalino.jpeg",
+        alt: "Doctor Carlos Robalino, General Practitioner",
+        file: "dr-carlos-robalino.jpeg",
+      },
+    ];
+
+    expect(teamSection).not.toContain("/manus-storage/");
+    for (const portrait of portraits) {
+      expect(teamSection).toContain(`src=\"${portrait.src}\"`);
+      expect(teamSection).toContain(`alt=\"${portrait.alt}\"`);
+      expect(existsSync(resolve(import.meta.dirname, "../public/team", portrait.file))).toBe(true);
     }
   });
 
