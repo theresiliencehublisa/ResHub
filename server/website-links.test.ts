@@ -74,6 +74,16 @@ describe("Resilience Hub homepage links", () => {
     }
   });
 
+  it("serves Rob's testimonial portrait from a Vercel static asset", () => {
+    const robPortrait = vercelHomeSource
+      .split('<figure className="rob-testimonial-portrait-figure">')[1]
+      ?.split("</figure>")[0] ?? "";
+
+    expect(robPortrait).toContain('src="/team/rob-hunt.jpg"');
+    expect(robPortrait).toContain('alt="Portrait of Rob"');
+    expect(existsSync(resolve(import.meta.dirname, "../public/team/rob-hunt.jpg"))).toBe(true);
+  });
+
   it("shows Tiffany's three reels in order with an accessible transcript disclosure", () => {
     const section = vercelHomeSource
       .split('<section\n          id="tiffany-testimonial"')[1]
@@ -97,7 +107,9 @@ describe("Resilience Hub homepage links", () => {
     expect(section).toContain("tiffanyTestimonialTranscript.map");
     expect(videoTranscriptSource).toContain("Hi, my name's Tiffany.");
     expect(videoTranscriptSource).toContain("Thanks for everything, Juan.");
-    expect(videoTranscriptSource).toContain("[Unclear phrase.]");
+    expect(videoTranscriptSource).toContain(
+      "I have been using The Resilience Hub now for four days, four days and four alone.",
+    );
   });
 
   it("keeps the critical external and contact destinations", () => {

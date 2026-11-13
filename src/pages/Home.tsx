@@ -233,7 +233,7 @@ export default function Home() {
           <figure className="rob-testimonial-portrait-figure">
             <img
               className="new-testimonial-portrait"
-              src="/manus-storage/b39528f8-2f59-4b53-b3b2-bcfc01dcbbb4_3f8ed4c8.jpg"
+              src="/team/rob-hunt.jpg"
               alt="Portrait of Rob"
               loading="lazy"
               decoding="async"
@@ -329,9 +329,6 @@ export default function Home() {
           <div className="tiffany-transcript-wrap">
             <details className="tiffany-transcript">
               <summary>Read Tiffany's testimonial instead</summary>
-              <p className="tiffany-transcript-note">
-                Transcript formatted for readability. One brief phrase is marked [unclear] because it cannot be heard clearly in the recording.
-              </p>
               <div className="tiffany-transcript-body">
                 {tiffanyTestimonialTranscript.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
