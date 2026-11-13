@@ -292,6 +292,7 @@ export default function Home() {
                 controls
                 playsInline
                 preload="metadata"
+                poster="/videos/tiffany/poster-1.jpg"
                 aria-label="Tiffany's testimonial reel 1"
               >
                 <source src="/videos/tiffany/reel-1.mp4" type="video/mp4" />
@@ -305,6 +306,7 @@ export default function Home() {
                 controls
                 playsInline
                 preload="metadata"
+                poster="/videos/tiffany/poster-2.jpg"
                 aria-label="Tiffany's testimonial reel 2"
               >
                 <source src="/videos/tiffany/reel-2.mp4" type="video/mp4" />
@@ -318,6 +320,7 @@ export default function Home() {
                 controls
                 playsInline
                 preload="metadata"
+                poster="/videos/tiffany/poster-3.jpg"
                 aria-label="Tiffany's testimonial reel 3"
               >
                 <source src="/videos/tiffany/reel-3.mp4" type="video/mp4" />
