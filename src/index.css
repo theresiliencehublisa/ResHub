@@ -470,6 +470,43 @@ span.new-placeholder { padding: 2px 5px; border-radius: 4px; background: #f5e9dd
 .new-video-intro p { margin-left: 0; }
 
 
+.tiffany-testimonial { padding: 74px 24px 82px; border-top: 1px solid var(--line); background: var(--cream); }
+.tiffany-testimonial-heading { max-width: 760px; margin: 0 auto 34px; text-align: center; }
+.tiffany-testimonial-heading .testimonial-voice-label { margin-bottom: 8px; }
+.tiffany-testimonial-heading h2 { margin: 8px 0 12px; color: var(--forest); font-size: clamp(36px, 4.5vw, 58px); line-height: 1; letter-spacing: -0.05em; }
+.tiffany-testimonial-heading p { margin: 0; color: var(--muted); font-size: 15px; }
+.tiffany-reel-grid { display: grid; max-width: 960px; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 0 auto; padding: 0; list-style: none; }
+.tiffany-reel-card { min-width: 0; padding: 14px; border: 1px solid var(--line); border-radius: 16px; background: #fffdf7; }
+.tiffany-reel-label { display: block; margin: 0 0 10px; color: var(--forest); font-size: 10px; font-weight: 800; letter-spacing: 0.12em; text-align: center; text-transform: uppercase; }
+.tiffany-reel-player { display: block; width: 100%; aspect-ratio: 9 / 16; border: 1px solid #274a3d; border-radius: 11px; background: #071b15; object-fit: contain; }
+.tiffany-transcript-wrap { display: flex; justify-content: center; margin: 24px auto 0; }
+.tiffany-transcript { width: min(100%, 820px); border: 1px solid var(--line); border-radius: 14px; background: #fffdf7; box-shadow: 0 6px 18px #041f160a; }
+.tiffany-transcript summary { padding: 17px 24px; color: var(--forest); cursor: pointer; font-size: 14px; font-weight: 800; list-style: none; text-align: center; }
+.tiffany-transcript summary::-webkit-details-marker { display: none; }
+.tiffany-transcript summary::after { display: inline-block; margin-left: 10px; color: var(--coral); font-size: 18px; content: "+"; }
+.tiffany-transcript[open] summary::after { content: "−"; }
+.tiffany-transcript summary:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; border-radius: 10px; }
+.tiffany-transcript-note { margin: 0; padding: 0 24px 13px; color: var(--muted); font-size: 12px; text-align: center; }
+.tiffany-transcript-body { max-width: 720px; margin: 0 auto; padding: 4px 24px 20px; }
+.tiffany-transcript-body p { margin: 0 0 14px; color: #526259; font-size: 14px; line-height: 1.7; }
+.tiffany-transcript-body p:last-child { margin-bottom: 0; }
+@media (max-width: 900px) {
+  .tiffany-reel-grid { max-width: 650px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tiffany-reel-card:nth-child(3) { width: 100%; max-width: 315px; grid-column: 1 / -1; justify-self: center; }
+}
+@media (max-width: 600px) {
+  .tiffany-testimonial { padding: 58px 20px 64px; }
+  .tiffany-testimonial-heading { margin-bottom: 26px; }
+  .tiffany-reel-grid { max-width: 340px; grid-template-columns: 1fr; gap: 14px; }
+  .tiffany-reel-card:nth-child(3) { max-width: none; grid-column: auto; }
+  .tiffany-reel-card { padding: 12px; }
+  .tiffany-transcript-wrap { margin-top: 18px; }
+  .tiffany-transcript summary { padding: 15px 14px; font-size: 13px; }
+  .tiffany-transcript-note { padding: 0 16px 12px; }
+  .tiffany-transcript-body { padding: 2px 18px 18px; }
+  .tiffany-transcript-body p { font-size: 13px; }
+}
+
 .new-cost-opening,
 .new-cost-app-note,
 .new-cost-choice-note,
