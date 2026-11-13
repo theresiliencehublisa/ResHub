@@ -93,11 +93,22 @@ describe("Resilience Hub homepage links", () => {
       "/videos/tiffany/reel-2.mp4",
       "/videos/tiffany/reel-3.mp4",
     ];
-    const positions = reelPaths.map((path) => section.indexOf(path));
+    const posterPaths = [
+      "/videos/tiffany/poster-1.jpg",
+      "/videos/tiffany/poster-2.jpg",
+      "/videos/tiffany/poster-3.jpg",
+    ];
+    const reelElements = section.match(/<video[\s\S]*?<\/video>/g) ?? [];
 
-    expect(positions.every((position, index) => position >= 0 && (index === 0 || position > positions[index - 1]))).toBe(true);
-    for (const path of reelPaths) {
-      expect(existsSync(resolve(import.meta.dirname, "../public", path.slice(1)))).toBe(true);
+    expect(reelElements).toHaveLength(reelPaths.length);
+    for (const [index, reelPath] of reelPaths.entries()) {
+      const reelElement = reelElements[index] ?? "";
+      const posterPath = posterPaths[index];
+      expect(reelElement).toContain(`<source src="${reelPath}"`);
+      expect(reelElement).toContain(`poster="${posterPath}"`);
+      for (const assetPath of [reelPath, posterPath]) {
+        expect(existsSync(resolve(import.meta.dirname, "../public", assetPath.slice(1)))).toBe(true);
+      }
     }
     expect(section).toContain("controls");
     expect(section).toContain("playsInline");
