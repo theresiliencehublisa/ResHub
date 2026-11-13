@@ -24,6 +24,17 @@ Find it at resiliencehubnsw.vercel.app.
 
 If you're in immediate danger, call triple zero. Lifeline, 13 11 14.`;
 
+export const tiffanyTestimonialTranscript = [
+  "Hi, my name's Tiffany. I'm twenty-six. Juan found me through a video that I had posted, speaking out for mental health issues on Facebook, and he told me about The Resilience Hub.",
+  "And I'll, I'll admit I was having a rough weekend. Nothing too crazy. I'm not horribly broken like I was when I was a kid, but I do still go through hard times and, you know, I have these emotions that are very big, and this weekend was rough.",
+  "I have been using The Resilience Hub now for four days, four days and four alone. I've started two new habits that are actually really helping me feel better about—just in general, just feel better. The first is that I'm going for walks every day. The second is that I'm getting ready.",
+  "These are two things that are for me, and in the midst of raising three children and being a wife and everything, work, being a stay-at-home mom, a part-time employee, everything, I put me last.",
+  "And this app makes it to where I have a clear objective for what I can do for myself for that day. And also it allows me the ability to talk to a professional because I am uninsured currently. Uh, perks of living in America, I have no insurance.",
+  "And even though I'm somebody's mother, somebody's daughter, somebody's wife, that doesn't matter, they don't wanna help. The Resilience Hub does want to help and has helped already. I can have these personal conversations with, um, AI that is set up specifically to help and to understand my situation.",
+  "Juan has put so much—Juan and his whole team have put so much love, time, and care into this website. I look forward to getting on it. I get on it in the morning, and I get on it in the evening. And honestly, I look forward to it. It makes me feel good. It makes me feel like I'm doing something for myself, and sometimes that can be the hardest thing.",
+  "But when you have a resource like The Resilience Hub, it turns into something that you look forward to instead of something that you're like, 'Oh, time to go to therapy,' or, you know, 'Time to figure out when I'm gonna have time to do this for myself.' You just make that little bit of time, and it's right here on your phone. Thanks for everything, Juan.",
+] as const;
+
 export const storyTranscriptReviewNote =
   "Automated draft transcript. The spoken first name is expanded to Juan Carroso using the supplied founder name; verify this rendering, the Macarthur Lifeline resource reference, and the referral wording against the video before publication.";
 

@@ -178,5 +178,12 @@ Verification: `pnpm check`, all ten tests, and `pnpm build` passed; `git diff --
 - [x] End the design copy with: “We've got plenty more designs on the way, each one with its own message. Wear the one that speaks to you.” Keep the copy grouped near the Sloane Fox support wording and readable on mobile and desktop.
 
 ## Vercel portrait restoration
-- [ ] On Vercel project `res-hub`, show the approved portraits for Juan Carroso, Carlos Camacho, and Doctor Carlos Robalino on their matching team cards. Use Git-tracked static public assets instead of Manus-only `/manus-storage/...` URLs so the deployed Vercel site can serve them.
-- [ ] Preserve the user's identity mapping: the bearded portrait is Carlos Camacho; the serious-looking Uruguayan man is Doctor Carlos Robalino. Do not generate or substitute portraits.
+- [x] On Vercel project `res-hub`, show the approved portraits for Juan Carroso, Carlos Camacho, and Doctor Carlos Robalino on their matching team cards. Use Git-tracked static public assets instead of Manus-only `/manus-storage/...` URLs so the deployed Vercel site can serve them.
+- [x] Preserve the user's identity mapping: the bearded portrait is Carlos Camacho; the serious-looking Uruguayan man is Doctor Carlos Robalino. Do not generate or substitute portraits.
+- [ ] Restore Rob Hunt's approved testimonial portrait from its existing source and serve it as a Git-tracked static file at `/team/rob-hunt.jpg`; update his testimonial figure to use that Vercel path and retain its `Portrait of Rob` alt text.
+
+## Tiffany testimonial reels
+- [ ] Within the homepage testimonial section, show Tiffany's three finished reel videos side by side in order 1–3 on wider screens and in a responsive, legible layout on smaller screens. Store the three files as Git-tracked root-public Vercel assets; give each player native controls, allow inline mobile playback, and do not autoplay. Preserve the established site styling and the existing Jared and Rob testimonial content.
+- [ ] Center an expandable transcript dropdown under the three reels, labelled exactly “Read Tiffany's testimonial instead”. When opened, reveal the complete transcript of the original video, structured into readable paragraphs without shortening the spoken content.
+
+Verification of the current testimonial update: `pnpm check`, all 13 tests, `pnpm build`, and `git diff --check` passed. The local production preview served Rob's portrait as `image/jpeg` and all three reels as `video/mp4`. The transcript contains the user-confirmed “four days and four alone” wording.

@@ -23,6 +23,10 @@ const vercelHomeSource = readFileSync(
   resolve(import.meta.dirname, "../src/pages/Home.tsx"),
   "utf8",
 );
+const videoTranscriptSource = readFileSync(
+  resolve(import.meta.dirname, "../src/data/videoTranscripts.ts"),
+  "utf8",
+);
 
 describe("Resilience Hub homepage links", () => {
   it("keeps every section target used by the homepage navigation", () => {
@@ -68,6 +72,44 @@ describe("Resilience Hub homepage links", () => {
       expect(teamSection).toContain(`alt=\"${portrait.alt}\"`);
       expect(existsSync(resolve(import.meta.dirname, "../public/team", portrait.file))).toBe(true);
     }
+  });
+
+  it("serves Rob's testimonial portrait from a Vercel static asset", () => {
+    const robPortrait = vercelHomeSource
+      .split('<figure className="rob-testimonial-portrait-figure">')[1]
+      ?.split("</figure>")[0] ?? "";
+
+    expect(robPortrait).toContain('src="/team/rob-hunt.jpg"');
+    expect(robPortrait).toContain('alt="Portrait of Rob"');
+    expect(existsSync(resolve(import.meta.dirname, "../public/team/rob-hunt.jpg"))).toBe(true);
+  });
+
+  it("shows Tiffany's three reels in order with an accessible transcript disclosure", () => {
+    const section = vercelHomeSource
+      .split('<section\n          id="tiffany-testimonial"')[1]
+      ?.split("</section>")[0] ?? "";
+    const reelPaths = [
+      "/videos/tiffany/reel-1.mp4",
+      "/videos/tiffany/reel-2.mp4",
+      "/videos/tiffany/reel-3.mp4",
+    ];
+    const positions = reelPaths.map((path) => section.indexOf(path));
+
+    expect(positions.every((position, index) => position >= 0 && (index === 0 || position > positions[index - 1]))).toBe(true);
+    for (const path of reelPaths) {
+      expect(existsSync(resolve(import.meta.dirname, "../public", path.slice(1)))).toBe(true);
+    }
+    expect(section).toContain("controls");
+    expect(section).toContain("playsInline");
+    expect(section).toContain('preload="metadata"');
+    expect(section).not.toMatch(/autoPlay/i);
+    expect(section).toContain("Read Tiffany's testimonial instead");
+    expect(section).toContain("tiffanyTestimonialTranscript.map");
+    expect(videoTranscriptSource).toContain("Hi, my name's Tiffany.");
+    expect(videoTranscriptSource).toContain("Thanks for everything, Juan.");
+    expect(videoTranscriptSource).toContain(
+      "I have been using The Resilience Hub now for four days, four days and four alone.",
+    );
   });
 
   it("keeps the critical external and contact destinations", () => {

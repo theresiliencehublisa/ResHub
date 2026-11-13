@@ -19,6 +19,7 @@ import {
   appPromoTranscriptReviewNote,
   storyTranscript,
   storyTranscriptReviewNote,
+  tiffanyTestimonialTranscript,
 } from "../data/videoTranscripts";
 
 const assets = {
@@ -232,7 +233,7 @@ export default function Home() {
           <figure className="rob-testimonial-portrait-figure">
             <img
               className="new-testimonial-portrait"
-              src="/manus-storage/b39528f8-2f59-4b53-b3b2-bcfc01dcbbb4_3f8ed4c8.jpg"
+              src="/team/rob-hunt.jpg"
               alt="Portrait of Rob"
               loading="lazy"
               decoding="async"
@@ -271,6 +272,71 @@ export default function Home() {
           </div>
         </section>
         <p className="new-testimonial-note">Shared with permission. Individual experiences vary.</p>
+
+        <section
+          id="tiffany-testimonial"
+          className="tiffany-testimonial"
+          aria-labelledby="tiffany-testimonial-title"
+        >
+          <header className="tiffany-testimonial-heading">
+            <span className="testimonial-voice-label">💬 Tiffany's story — in her own words</span>
+            <h2 id="tiffany-testimonial-title">Tiffany's Story</h2>
+            <p>Watch her story in three short reels, or open the full transcript below.</p>
+          </header>
+
+          <ol className="tiffany-reel-grid" aria-label="Tiffany's testimonial reels, in order">
+            <li className="tiffany-reel-card">
+              <span className="tiffany-reel-label">Reel 1</span>
+              <video
+                className="tiffany-reel-player"
+                controls
+                playsInline
+                preload="metadata"
+                aria-label="Tiffany's testimonial reel 1"
+              >
+                <source src="/videos/tiffany/reel-1.mp4" type="video/mp4" />
+                Your browser does not support embedded video.
+              </video>
+            </li>
+            <li className="tiffany-reel-card">
+              <span className="tiffany-reel-label">Reel 2</span>
+              <video
+                className="tiffany-reel-player"
+                controls
+                playsInline
+                preload="metadata"
+                aria-label="Tiffany's testimonial reel 2"
+              >
+                <source src="/videos/tiffany/reel-2.mp4" type="video/mp4" />
+                Your browser does not support embedded video.
+              </video>
+            </li>
+            <li className="tiffany-reel-card">
+              <span className="tiffany-reel-label">Reel 3</span>
+              <video
+                className="tiffany-reel-player"
+                controls
+                playsInline
+                preload="metadata"
+                aria-label="Tiffany's testimonial reel 3"
+              >
+                <source src="/videos/tiffany/reel-3.mp4" type="video/mp4" />
+                Your browser does not support embedded video.
+              </video>
+            </li>
+          </ol>
+
+          <div className="tiffany-transcript-wrap">
+            <details className="tiffany-transcript">
+              <summary>Read Tiffany's testimonial instead</summary>
+              <div className="tiffany-transcript-body">
+                {tiffanyTestimonialTranscript.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </details>
+          </div>
+        </section>
 
         <section className="new-choice-grid" aria-label="Choose your pathway">
           <article id="app" className="new-choice new-choice-dark">

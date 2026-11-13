@@ -46,7 +46,12 @@ Keep the shirt-support impact line “Every shirt sold through Sloane Fox helps 
 
 ## Vercel portrait-restoration implementation note
 
-The verified deployment is Vercel project `res-hub`, connected to `theresiliencehublisa/ResHub`. The repository-root Vite build uses the root `src/` and copies root `public/` to `dist/public`; team photos must therefore be checked-in files under root `public/` and referenced through root-relative public URLs, not the Manus-only `/manus-storage/...` routes. Reuse the original user-approved portraits and preserve the mapping: Juan Carroso, bearded Carlos Camacho, and the serious-looking Uruguayan man Doctor Carlos Robalino. Keep this fix on a preview branch and show the user the change list and preview before anything is merged or published to production.
+The verified deployment is Vercel project `res-hub`, connected to `theresiliencehublisa/ResHub`. The repository-root Vite build uses the root `src/` and copies root `public/` to `dist/public`; all portraits must therefore be checked-in files under root `public/` and referenced through root-relative public URLs, not Manus-only `/manus-storage/...` routes. Juan Carroso, bearded Carlos Camacho, and the serious-looking Uruguayan man Doctor Carlos Robalino already use their original static assets. Rob Hunt's testimonial still references a Manus-only URL; the verified original JPEG is `https://resihub-bsn6crau.manus.space/manus-storage/b39528f8-2f59-4b53-b3b2-bcfc01dcbbb4_3f8ed4c8.jpg` (1088 × 1601). Add it as `public/team/rob-hunt.jpg`, update his figure to `/team/rob-hunt.jpg`, and preserve `alt="Portrait of Rob"`.
+
+
+## Latest request — Tiffany testimonial reels
+
+Use the three completed reel videos under `/home/ubuntu/resilience_reels/reels/` as Tiffany's testimonial, rather than the original full-length video player. Present reels 1, 2, and 3 in that order, side by side at desktop widths and in a responsive, legible layout on smaller screens. Give each video native playback controls, inline mobile playback, and no autoplay. Add a cohesive Tiffany testimonial heading and place a centered expandable transcript disclosure beneath the reels with the exact label “Read Tiffany's testimonial instead”; opening it reveals the complete original-video transcript in readable paragraphs, without shortening spoken content. Store the three video files as Git-tracked root `public/` assets for Vercel. Preserve the established styling and existing Jared/Rob testimonial copy. The user reviewed the Vercel preview and approved live publication after correcting the transcript phrase; the later request to restore Rob's portrait should be included in this same production update.
 
 
 ## Standing user corrections for future AI-generated prompts
