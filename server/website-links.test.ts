@@ -123,6 +123,28 @@ describe("Resilience Hub homepage links", () => {
     );
   });
 
+  it("serves the main story and app promo from local Vercel video assets", () => {
+    const heroSection = vercelHomeSource.split('<section id="home"')[1]?.split("</section>")[0] ?? "";
+    const appSection = vercelHomeSource.split('<article id="app"')[1]?.split("</article>")[0] ?? "";
+    const videos = [
+      { section: heroSection, path: "/videos/resilience-story.mp4", file: "resilience-story.mp4" },
+      { section: appSection, path: "/videos/resilience-app.mp4", file: "resilience-app.mp4" },
+    ];
+
+    for (const video of videos) {
+      expect(video.section).toContain(`src="${video.path}"`);
+      expect(existsSync(resolve(import.meta.dirname, "../public/videos", video.file))).toBe(true);
+    }
+    expect(heroSection).toContain('poster="/media/story-poster.jpg"');
+    expect(appSection).toContain('poster="/media/app-promo-poster.jpg"');
+    expect(vercelHomeSource).toContain('controls playsInline preload="none"');
+    expect(vercelHomeSource).toContain("href={src}");
+    expect(vercelHomeSource).not.toMatch(/autoPlay/i);
+    expect(vercelHomeSource).not.toContain("https://streamable.com/hvfvum");
+    expect(vercelHomeSource).not.toContain("https://streamable.com/sbg00m");
+    expect(vercelHomeSource).not.toContain("/manus-storage/resilience-");
+  });
+
   it("keeps the critical external and contact destinations", () => {
     for (const destination of [
       "https://resiliencehubnsw.vercel.app",

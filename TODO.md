@@ -188,3 +188,12 @@ Verification: `pnpm check`, all ten tests, and `pnpm build` passed; `git diff --
 - [ ] For mobile previews, set each of Tiffany's three video players to a still frame from the matching reel so the preview shows Tiffany instead of a black screen. Save each poster as a Git-tracked image under `public/videos/tiffany/`, preserving the portrait aspect ratio, and use the matching poster with the corresponding reel.
 
 Verification of the current testimonial update: `pnpm check`, all 13 tests, `pnpm build`, and `git diff --check` passed. The local production preview served Rob's portrait as `image/jpeg` and all three reels as `video/mp4`. The transcript contains the user-confirmed “four days and four alone” wording.
+
+
+## Latest request — repair the main and app promotional videos (Vercel preview only)
+- [x] Put the “powerful one that does both” video from `https://streamable.com/hvfvum` in the first/main hero position, using a Git-tracked local browser-playable MP4 in root `public/videos/` rather than a Manus-only storage path.
+- [x] Put the app video from `https://streamable.com/sbg00m` in the AI app section, using a Git-tracked local browser-playable MP4 in root `public/videos/` rather than a Manus-only storage path.
+- [x] Keep native playback controls and inline mobile playback; preserve each existing poster, caption, transcript and the no-autoplay behavior. Remove the unavailable Streamable fallbacks. Do not change the logo, wording, crisis information, privacy warning or unrelated content.
+- [ ] Show Lisa a Vercel preview from a separate review branch; do not merge to `main` or publish to production until she approves the preview.
+
+Implementation evidence: `pnpm check`, all 14 tests, `pnpm build`, and `git diff --check` passed. The local production HTTP preview returned `206 video/mp4` for both MP4 files with byte-range support; their video and audio streams are H.264/AAC.
