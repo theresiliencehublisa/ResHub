@@ -59,8 +59,6 @@ function LocalVideo({
   src,
   poster,
   title,
-  fallbackUrl,
-  fallbackLabel,
   className = "",
   transcript,
   transcriptReviewNote,
@@ -68,8 +66,6 @@ function LocalVideo({
   src: string;
   poster: string;
   title: string;
-  fallbackUrl: string;
-  fallbackLabel: string;
   className?: string;
   transcript?: string;
   transcriptReviewNote?: string;
@@ -82,8 +78,8 @@ function LocalVideo({
       </video>
       <p className="new-video-fallback">
         If playback is unavailable, {" "}
-        <a href={fallbackUrl} target="_blank" rel="noopener noreferrer">
-          {fallbackLabel}
+        <a href={src} target="_blank" rel="noopener noreferrer">
+          open the video file in a new tab
         </a>
         .
       </p>
@@ -176,11 +172,9 @@ export default function Home() {
             </p>
             <LocalVideo
               className="new-main-story"
-              src="/manus-storage/resilience-story_89bc418c.mp4"
+              src="/videos/resilience-story.mp4"
               poster="/media/story-poster.jpg"
               title="The Resilience Hub: a personal story about finding support"
-              fallbackUrl="https://streamable.com/hvfvum"
-              fallbackLabel="watch the main story on Streamable"
               transcript={storyTranscript}
               transcriptReviewNote={storyTranscriptReviewNote}
             />
@@ -384,11 +378,9 @@ export default function Home() {
                 <p className="new-app-pricing-note"><strong>Access:</strong> The AI app will always be 100% free for registered users. Pricing options for organisational or corporate access are being explored.</p>
               </div>
               <LocalVideo
-                src="/manus-storage/resilience-app_afc6bf25.mp4"
+                src="/videos/resilience-app.mp4"
                 poster="/media/app-promo-poster.jpg"
                 title="The Resilience Hub AI app promotional video"
-                fallbackUrl="https://streamable.com/sbg00m"
-                fallbackLabel="watch the app video on Streamable"
                 transcript={appPromoTranscript}
                 transcriptReviewNote={appPromoTranscriptReviewNote}
               />

@@ -61,3 +61,10 @@ Extract one portrait still frame from each completed reel and use it as that vid
 
 - Sloane Fox is not a recovery-apparel brand. Do not describe it that way or imply that wearing its designs means someone is in recovery. When relevant, explain only that shirt sales help fund the Hub's eight-week program.
 - The Resilience Hub AI app has a sign-up and login process. Treat any AI-generated prompt or imported copy claiming or implying that no login is required as inaccurate; do not implement that claim unless the user explicitly corrects this fact.
+
+
+## Latest request — local promotional videos for Vercel (preview only)
+
+The verified source is the GitHub repository `theresiliencehublisa/ResHub`, based on production commit `0115a1aad5055119202787ac3083bc57dd333e8a`. Preserve all existing site wording, the official logo artwork, the crisis notices, the AI privacy warning, posters, and transcripts. The first/main hero player must use the user's `https://streamable.com/hvfvum` video (“the powerful one that does both”); the AI-app-section player must use `https://streamable.com/sbg00m`. Those Streamable share pages now report that the videos are unavailable, so use the same original MP4 copies still served from the previous public ResHub site's media storage, without modifying their video content.
+
+Store them as Git-tracked root-public assets at `/videos/resilience-story.mp4` and `/videos/resilience-app.mp4`. Update the root Vercel homepage source in `src/pages/Home.tsx` to point to those local assets in the correct sections, keep native controls and inline mobile playback, retain the existing matching poster and transcript, and remove dead Streamable and Manus-only storage fallbacks. Extend the root `server/website-links.test.ts` checks to validate the mapping and static files. Keep the work on a separate Vercel preview branch and do not merge or publish it to production until Lisa reviews and approves the preview.
